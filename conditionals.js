@@ -17,12 +17,14 @@
 let temp = 36;
 
 // expression true, we execute code block
-if (temp > 30) {
+if (temp > 30)
+{
 	console.log("Summer weather");
 }
 
 // expression false, we don't execude code block
-if (temp < 20) {
+if (temp < 20) 
+{
 	console.log("Autumn weather");
 }
 
@@ -40,11 +42,16 @@ if (temp < 20) {
 
 let tempScale = "C";
 
-if (tempScale === "F") {
+if (tempScale === "F") 
+{
 	console.log("Fahrenheit");
-} else if (tempScale === "C") {
+} 
+else if (tempScale === "C")
+{
 	console.log("Celsius");
-} else {
+} 
+else
+{
 	console.log(`The value is ${tempScale}`);
 }
 
@@ -55,19 +62,23 @@ temp = 10;
 	* example of a logic error
 */
 
-if (temp > 30) {
+if (temp > 30)
+{
 	console.log("Hot");
 }
 
-if (temp < 25) {
+if (temp < 25)
+{
 	console.log("Pleasant");
 }
 
-if (temp < 20) {
+if (temp < 20)
+{
 	console.log("Cooling off");
 }
 
-if (temp < 15) {
+if (temp < 15) 
+{
 	console.log("Winter is coming");
 }
 
@@ -89,9 +100,12 @@ if (temp < 15) {
 temp = 35;
 tempScale = "F";
 
-if (tempScale === "C" && temp >= 30) {
+if (tempScale === "C" && temp >= 30)
+{
 	console.log("hot summer day");
-} else if (tempScale === "F" && temp >= 30) {
+}
+else if(tempScale === "F" && temp >= 30)
+{
 	console.log("winter is here");
 }
 
@@ -108,16 +122,25 @@ if (tempScale === "C" && temp >= 30) {
 
 let age = 10
 
-if (typeof age !== "number") {
-  console.log("Please enter a number")
-} else if (age < 13) {
-  console.log("Ticket price: $8")
-} else if (age <= 64) {
-  console.log("Ticket price: $12")
-} else if (age >= 115) {
+if (typeof age !== "number")
+{
+	console.log("Please enter a number")
+}
+else if (age < 13)
+{
+	console.log("Ticket price: $8")
+}
+else if (age <= 64)
+{
+	console.log("Ticket price: $12")
+}
+else if (age >= 115)
+{
 	console.log("you sure about that?")
-} else {
-  console.log("Ticket price: $7")
+}
+else 
+{
+	console.log("Ticket price: $7")
 }
 
 /* 
@@ -132,8 +155,77 @@ if (typeof age !== "number") {
 
 let f1Team = "Sauber"
 
-if (f1Team === "Petronas") {
+if (f1Team === "Petronas")
+{
 	console.log("Toto Wolff")
 }
 
 f1Team === "Petronas" ? console.log("Toto Wolff") : null
+
+// ? Ternary Chaining (not recommended)
+
+f1Team === "Petronas" ? console.log("Toto Wolff")
+	: f1Team === "Red Bull" ? console.log("Laurent Mekkies")
+	: f1Team == "Aston Martin" ? console.log("Adrian Newey")
+	: console.log("We don't have this team")
+
+/* 
+	? Switch Statements
+	* a way to execute multiple expression with or without stop
+*/
+
+let teamPrincipal = "Zac Brown"
+
+switch(teamPrincipal)
+{
+	// ? what you're comparing against
+	case "Fred Vasseur":
+		// ? condition to run
+		console.log("Ferrari principal")
+		break // ? stops other cases from evaluating
+	case "Zac Brown":
+		console.log("McLaren Team Principal")
+		break
+	case "Guenther Steiner":
+		console.log("Funniest team principal")
+		break
+	default:
+		// ? equivalent of an else
+		console.log("Not someone we know")
+}
+
+/* 
+	? Challenge
+	* create a shipping status checker
+	* create a variable called status containing one of the following
+		* pending
+		* shipped
+		* cancelled
+		* delivered
+	* use a switch statement or a ternary to print appropriate message
+		* Your order is being prepared
+		* Your order is on its way
+		* Your order has been delivered
+		* Your order was cancelled
+		* Uknown order status
+*/
+
+let shippingStatus = "pending"
+
+switch (shippingStatus)
+{
+	case "pending":
+		console.log("Your order is being prepared");
+		break;
+	case "shipped":
+		console.log("Your order is on its way");
+		break;
+	case "delivered":
+		console.log("Your order has been delivered");
+		break;
+	case "cancelled":
+		console.log("Your order was cancelled");
+		break;
+	default:
+		console.log("Unknown order status");
+}
